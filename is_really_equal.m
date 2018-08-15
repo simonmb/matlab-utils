@@ -66,7 +66,7 @@ function isE = is_really_equal(a_struc, b_struc)
                             isE = is_really_equal(a.(fn{i}), b.(fn{i}));
                         elseif length(a.(fn{i})) == 1 && ~iscell(a.(fn{i}))
                             if isnan(a.(fn{i}))
-                                if isnan(isnan(b.(fn{i})))
+                                if isnan(b.(fn{i}))
                                     isE = 1;
                                 else
                                     isE = 0;
