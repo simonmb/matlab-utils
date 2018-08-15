@@ -24,11 +24,11 @@
 
 
 function isE = is_really_equal(a_struc, b_struc)
-	% Amplifies the isequal function from matlab
+	% Amplifies the isequaln function from matlab
 	% adding the capability to check whether to structures have same values
 	% a, b: variables
 
-    isE = isequal(a_struc, b_struc);
+    isE = isequaln(a_struc, b_struc);
     
     if isE
         isE = 1;
@@ -64,23 +64,8 @@ function isE = is_really_equal(a_struc, b_struc)
 
                         if length(a.(fn{i})) > 1
                             isE = is_really_equal(a.(fn{i}), b.(fn{i}));
-                        elseif length(a.(fn{i})) == 1 && ~iscell(a.(fn{i}))
-                            if isnan(a.(fn{i}))
-                                if isnan(b.(fn{i}))
-                                    isE = 1;
-                                else
-                                    isE = 0;
-                                    return
-                                end
-                            else
-                                isE = isequal(a.(fn{i}), b.(fn{i}));  
-
-                                if ~isE
-                                   return 
-                                end  
-                            end
                         else
-                            isE = isequal(a.(fn{i}), b.(fn{i}));  
+                            isE = isequaln(a.(fn{i}), b.(fn{i}));  
 
                             if ~isE
                                return 
