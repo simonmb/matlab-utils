@@ -72,6 +72,12 @@ function isE = is_really_equal(a_struc, b_struc)
                                     isE = 0;
                                     return
                                 end
+                            else
+                                isE = isequal(a.(fn{i}), b.(fn{i}));  
+
+                                if ~isE
+                                   return 
+                                end  
                             end
                         else
                             isE = isequal(a.(fn{i}), b.(fn{i}));  
