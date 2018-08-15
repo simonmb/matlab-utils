@@ -24,10 +24,9 @@
 
 
 function isE = is_really_equal(a_struc, b_struc)
-	%%
-	%% Amplifies the isequal function from matlab
-	%% adding the capability to check whether to structures have same values
-	%% a, b: variables
+	% Amplifies the isequal function from matlab
+	% adding the capability to check whether to structures have same values
+	% a, b: variables
 
     isE = isequal(a_struc, b_struc);
     
